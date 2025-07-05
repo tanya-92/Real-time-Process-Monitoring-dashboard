@@ -504,7 +504,8 @@ function loadAlerts() {
 
 // Connect to WebSocket
 function connectWebSocket() {
-    socket = io('/monitor');
+    const socket = io(window.location.origin + '/monitor');
+
     
     socket.on('connect', () => {
         console.log('Connected to server');
