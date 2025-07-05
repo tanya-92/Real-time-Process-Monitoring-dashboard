@@ -243,4 +243,5 @@ def monitor_disconnect():
     print('Client disconnected')
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    socketio.run(app, host='0.0.0.0', port=port)
